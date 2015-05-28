@@ -1,0 +1,8 @@
+got this from -> http://www.gilluminate.com/2008/10/16/svn-batch-commands/
+ 
+Here are a few little hints that may help speed up your SVN workflow if you are using SVN in a Linux environment. I found the first one on Snipplr and used that to create the second one for myself.
+ 
+Deleting multiple missing files (ie. the ones with a “!” next to them):
+svn delete $( svn status | sed -e '/^!/!d' -e 's/^!//' )
+Adding multiple new files (ie. the ones with a “?” next to them):
+svn add $( svn status | sed -e '/^?/!d' -e 's/^?//' )
