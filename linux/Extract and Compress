@@ -1,0 +1,2 @@
+# extract tar.gz
+tar -zxvf filename.tar.gz
