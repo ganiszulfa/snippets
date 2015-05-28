@@ -1,0 +1,11 @@
+create a shared folder with mac & linux
+
+ganis@ganis-ub14-32:~/work$ sudo mkdir /mnt/mac
+ganis@ganis-ub14-32:~/work$ sudo chmod 777 /mnt/mac/
+ganis@ganis-ub14-32:~/work$ sudo mount -t vboxsf ganis /mnt/mac
+ganis@ganis-ub14-32:~/work$ ln -s /mnt/mac/ /home/ganis/mac
+ganis@ganis-ub14-32:~/work$ ls /m
+media/ mnt/   
+ 
+ganis is the folder name in host
+mac is the folder name in guest
