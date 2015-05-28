@@ -1,0 +1,1 @@
+./scripts/dtc/dtc -O dtb -o [nama dtb].dtb [lokasi dts].dts
