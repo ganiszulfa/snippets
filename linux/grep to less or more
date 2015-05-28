@@ -1,0 +1,2 @@
+grep --color=always "string" * -rwI | less -R
+grep --color=always "string" * -rwI | more
