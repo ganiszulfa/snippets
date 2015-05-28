@@ -1,0 +1,36 @@
+1. what is !! (double exclamation mark) in C language?
+ 
+It is just a unary NOT then a unary NOT again.
+ 
+The effect of this is that it will transform the output of that incredibly long-named function 
+into either 1 or 0. If the return value of the function is greater (or less) than 0, double NOT 
+will produce 1. If it is 0 then double NOTing it will produce 0.
+ 
+2. Why do a lot of #defines in the kernel use do { ... } while(0)?
+ 
+It allows you to use more complex macros in conditional code.
+ 
+3. likely() and unlikely()
+ 
+These functions are hints for the compiler that allows it to correctly optimize the branch, by knowing which is the likeliest one. It optimizes things by ordering the generated assemblycode correctly, to optimize the usage of the processor pipeline. To do so, they arrange the code so that the likeliest branch is executed without performing any jmp instruction (which has the bad effect of flushing the processor pipeline).
+ 
+4. “EXPORT_SYMBOL” in Linux kernel code?
+ 
+It makes a symbol accessible to dynamically loaded modules (provided that said modules add an extern declaration).
+ 
+5. #define PUBLIC
+i.e. as nothing. It's simply a bit of "self-documentation".
+ 
+6. volatile
+keyword is intended to prevent the compiler from applying certain optimizations.
+ 
+7. __init & cold
+The __init macro is used to describe the function as only being required during initialisation time: once initialisation is performed, the kernel will remove this function and release its memory. The module_init macro is used to tell the kernel where the initialisation entry point to the module lives, i.e. what function to call at 'start of day'.
+ 
+The cold attribute is to mark the function as one that is rarely used, which results in the compiler optimising the function for size instead of speed.
+ 
+8. read_mostly
+The __read_mostly macro is meant to inform the compiler that this piece of data will not be modified very often and mostly just read, hence the read mostly. As far as I can tell, a variable not defined as __read_mostly falls into the write mostly category. 
+ 
+9. alloc_percpu()
+The alloc_percpu() macro allocates one instance of an object of the given type for every processor on the system.
