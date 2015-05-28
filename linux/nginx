@@ -1,0 +1,4 @@
+Tracking down Nginx failure
+
+sudo nginx -t
+
