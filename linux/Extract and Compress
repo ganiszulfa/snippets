@@ -1,2 +1,8 @@
 # extract tar.gz
 tar -zxvf filename.tar.gz
+
+# extract tar.bz2
+tar -jxvf filename.tar.bz2
+
+# v is for verbose
+# x is for extract
